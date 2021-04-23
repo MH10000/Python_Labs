@@ -10,3 +10,7 @@ Output should read like - "81.32 degrees fahrenheit = 27.4 degrees celsius"
 
 
 '''
+f = 100
+c = round((f -32) * (5 / 9),1)
+print(str(f) + " degrees fahrenheit = " + str(c) + " degrees celcius")
+

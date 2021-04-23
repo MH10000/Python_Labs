@@ -7,3 +7,10 @@ Letter input: o
 Result: 4
 
 '''
+# User input
+string = input("enter sentence ")
+letter = input("enter a letter ")
+
+# Find index
+position = string.find(letter)
+print(position)

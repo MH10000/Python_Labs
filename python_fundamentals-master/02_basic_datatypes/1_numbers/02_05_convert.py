@@ -10,3 +10,14 @@ Demonstrate how to:
     Take note of what information is lost when some conversions take place.
 
 '''
+a = float(2)
+print(a)
+b = int(2.2)
+print(b)
+c = 200 // 3.3
+print(c)
+d = int(input("choose a number: "))
+e = int(input("choose another number: "))
+f = d * e
+print("the product of your numbers is: " + str(f))2
+
