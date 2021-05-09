@@ -10,3 +10,9 @@ NOTE: Check out the Python docs and see whether you can come up with a solution,
       Feel free to discuss any questions you have with your mentor and on the forum!
 
 '''
+input_dict = {"item1": 5, "item2": 6, "item3": 1}
+
+list_ = list(input_dict.items())
+sorted_list = sorted(list_, key = lambda item: item[1])
+
+print(sorted_list)

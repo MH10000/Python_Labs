@@ -17,3 +17,8 @@ Another example: if input is 3, you will output
 Hint: Think of nested for loops
 
 '''
+user_input = int(input("Please enter a number less than 20: "))
+i = 1
+while i < (user_input+1):
+    print("*" * i)
+    i += 1

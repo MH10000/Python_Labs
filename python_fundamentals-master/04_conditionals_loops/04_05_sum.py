@@ -7,3 +7,12 @@ The output of your calculation should therefore look like this:
 
 The sum is: 5050
 '''
+user_input_low = int(input("Please enter a number: "))
+user_input_high = int(input("Please enter a higher number: "))
+
+for n in range(user_input_low, user_input_high+1):
+    sum_input = n
+    for i in range(user_input_low, user_input_high):
+        sum_input += i
+
+print(sum_input)
