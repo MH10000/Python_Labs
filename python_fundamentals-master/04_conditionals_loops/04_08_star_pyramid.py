@@ -19,6 +19,6 @@ Hint: Think of nested for loops
 '''
 user_input = int(input("Please enter a number less than 20: "))
 i = 1
-while i < (user_input+1):
+while i < user_input + 1:
     print("*" * i)
     i += 1
