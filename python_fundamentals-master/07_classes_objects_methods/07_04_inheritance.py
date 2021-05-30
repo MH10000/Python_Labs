@@ -18,3 +18,29 @@ CLASSES AND INHERITANCE
     Any class attributes you could add?
 
 '''
+class Movie():
+    def __init__(self, year, title):
+        self.year = year
+        self.title = title
+
+class Romcom(Movie):
+    def __init__(self, year, title, main_actor):
+        super().__init__(year, title)
+        self.main_actor = main_actor
+
+    def cry(self):
+        if self.main_actor == "Jenny":
+            print("cry")
+        else:
+            print("laugh")
+
+class ActionMovie(Movie):
+    pg = 13
+    def __init__(self, main_actor):
+        self.main_actor = main_actor
+
+lovenote = Romcom(1985, "November Rain", "Rose")
+action1 = ActionMovie("Arnie")
+print(action1.main_actor)
+print(lovenote.title)
+print(lovenote.cry())
