@@ -7,3 +7,20 @@ Write a script that reads in the words from the words.txt file and finds and pri
 
 
 '''
+list_words = []
+with open("words.txt", "r") as fin:
+    for word in fin.readlines():
+        word = word.rstrip()
+        list_words.append(word)
+
+list_words.sort(key=len)
+
+for short in list_words:
+    if len(short) == len(list_words[0]):
+        print(short)
+
+for long in list_words:
+    if len(long) == len(list_words[-1]):
+        print(long)
+
+print(len(list_words))
