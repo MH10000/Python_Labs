@@ -42,8 +42,8 @@ class Hero():
 
 class Ninja(Hero):
     """Defines the Ninja class and uses parameters from Hero() superclass"""
-    def __init__(self, name, ability1, ability2, ability3, hp=100):
-        super().__init__(name, ability1, ability2, ability3, hp=100)
+    def __init__(self, ability1, ability2, ability3, hp, name="Slasher"):
+        super().__init__(name, ability1, ability2, ability3, hp)
 
     def __str__(self):
         """Prints the character attributes for the user"""
