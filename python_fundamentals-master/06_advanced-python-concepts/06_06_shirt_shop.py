@@ -4,5 +4,5 @@
 colors = ["neon orange", "spring green"]
 sizes = ["S", "M", "L"]
 
-stock_list = [x for x in colors + y for y in sizes]
+stock_list = [(x, y) for y in sizes for x in colors]
 print(stock_list)

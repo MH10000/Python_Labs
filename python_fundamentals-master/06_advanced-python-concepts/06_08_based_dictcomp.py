@@ -15,3 +15,7 @@
 
 base = 10
 digits = set(range(base))
+
+dict_2 = {n: [n // base**2 if n <= base**3 and n >= base**2 else 0, n // base if n < base**2 else int(n / base) % base, n if n in digits else n % base] for n in range(125)}
+
+print(dict_2)
