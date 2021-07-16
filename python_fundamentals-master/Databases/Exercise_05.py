@@ -45,16 +45,16 @@ userTable = sqlalchemy.Table('users', metadata,
                        sqlalchemy.Column('first_name', sqlalchemy.String(100), nullable=False),
                        sqlalchemy.Column('last_name', sqlalchemy.String(100), nullable=False),
                        sqlalchemy.Column('email', sqlalchemy.String(100), nullable=False),
-                       sqlalchemy.Column('createdAt', sqlalchemy.Integer(), nullable=False),
-                       sqlalchemy.Column('updatedAt', sqlalchemy.Integer())
+                       sqlalchemy.Column('createdAt', sqlalchemy.BigInteger(), nullable=False),
+                       sqlalchemy.Column('updatedAt', sqlalchemy.BigInteger())
               )
 
 taskTable = sqlalchemy.Table('tasks', metadata,
                        sqlalchemy.Column('task_id', sqlalchemy.Integer(), nullable=False),
                        sqlalchemy.Column('task_name', sqlalchemy.String(100), nullable=False),
                        sqlalchemy.Column('task_description', sqlalchemy.String(200), nullable=False),
-                       sqlalchemy.Column('createdAt', sqlalchemy.Integer(), nullable=False),
-                       sqlalchemy.Column('updatedAt', sqlalchemy.Integer()),
+                       sqlalchemy.Column('createdAt', sqlalchemy.BigInteger(), nullable=False),
+                       sqlalchemy.Column('updatedAt', sqlalchemy.BigInteger()),
                        sqlalchemy.Column('completed', sqlalchemy.Boolean(), default=True)
               )
 
@@ -74,24 +74,24 @@ user_taskTable = sqlalchemy.Table('users_tasks', metadata, autoload=True, autolo
 x = 0
 for items in user_request["data"]:
     if user_request["data"][x]["id"] not in data_table_user(userTable):
-    query = sqlalchemy.insert(userTable).values(user_id=user_request["data"][x]["id"], first_name=["data"][x]["first_name"], last_name=["data"][x]["last_name"], email=["data"][x]["email"], createdAt=["data"][x]["createdAt"], updatedAt=["data"][x]["updatedAt"])
-    result_proxy = connection.execute(query)
+        query = sqlalchemy.insert(userTable).values(user_id=user_request["data"][x]["id"], first_name=user_request["data"][x]["first_name"], last_name=user_request["data"][x]["last_name"], email=user_request["data"][x]["email"], createdAt=user_request["data"][x]["createdAt"], updatedAt=user_request["data"][x]["updatedAt"])
+        result_proxy = connection.execute(query)
     x += 1
 
 # Populate task table
 y = 0
 for items in task_request["data"]:
     if user_request["data"][y]["id"] not in data_table_task(taskTable):
-    query_2 = sqlalchemy.insert(taskTable).values(task_id=["data"][y]["id"], task_name=["data"][y]["name"], task_description=["data"][y]["description"], createdAt=["data"][y]["createdAt"], updatedAt=["data"][y]["updatedAt"], completed=["data"][y]["completed"])
-    result_proxy = connection.execute(query_2)
+        query_2 = sqlalchemy.insert(taskTable).values(task_id=task_request["data"][y]["id"], task_name=task_request["data"][y]["name"], task_description=task_request["data"][y]["description"], createdAt=task_request["data"][y]["createdAt"], updatedAt=task_request["data"][y]["updatedAt"], completed=task_request["data"][y]["completed"])
+        result_proxy = connection.execute(query_2)
     y += 1
 
 # Populate user_task table
 z = 0
 for items in task_request["data"]:
     if user_request["data"][z]["id"] not in data_table_user(user_taskTable):
-    query_3 = sqlalchemy.insert(user_taskTable).values(task_id=["data"][z]["id"], user_id=["data"][z]["userId"])
-    result_proxy = connection.execute(query_3)
+        query_3 = sqlalchemy.insert(user_taskTable).values(task_id=task_request["data"][z]["id"], user_id=task_request["data"][z]["userId"])
+        result_proxy = connection.execute(query_3)
     z += 1
 
 

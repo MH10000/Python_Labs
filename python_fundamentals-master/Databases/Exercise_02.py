@@ -24,7 +24,7 @@ film_category = sqlalchemy.Table('film_category', metadata, autoload=True, autol
 # result_proxy = connection.execute(query)
 
 join_statement = actor.join(film_actor, actor.columns.actor_id == film_actor.columns.actor_id).join(film, film.columns.film_id == film_actor.columns.film_id)
-query_2 = sqlalchemy.select([film.columns.film_id, film.columns.title, actor.columns.first_name, actor.columns.last_name]).select_from(join_statement)
+query_2 = sqlalchemy.select([sqlalchemy.func.count(film.columns.film_id), actor.columns.first_name]).select_from(join_statement).group_by(actor.columns.first_name)
 result_proxy_2 = connection.execute(query_2)
 
 # join_statement_2 = actor.join(film_actor, actor.columns.actor_id == film_actor.columns.actor_id).join(film, film_actor.columns.film_id == film.columns.film_id).join(film_category, film.columns.film_id == film_category.columns.film_id)
