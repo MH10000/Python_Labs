@@ -18,7 +18,7 @@ users_url = "http://demo.codingnomads.co:8080/tasks_api/users"
 tasks_url = "http://demo.codingnomads.co:8080/tasks_api/tasks"
 
 # Establish database connection
-engine = sqlalchemy.create_engine('mysql+pymysql://root:Bioplus1%%@localhost/codingNomads')
+engine = sqlalchemy.create_engine('mysql+pymysql://root:password@localhost/codingNomads')
 connection = engine.connect()
 metadata = sqlalchemy.MetaData()
 

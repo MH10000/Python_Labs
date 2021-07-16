@@ -15,7 +15,7 @@ The more dynamic the application, the better!
 import sqlalchemy
 from pprint import pprint
 
-engine = sqlalchemy.create_engine('mysql+pymysql://root:Bioplus1%%@localhost/new_testDB')
+engine = sqlalchemy.create_engine('mysql+pymysql://root:password@localhost/new_testDB')
 
 connection = engine.connect()
 metadata = sqlalchemy.MetaData()

@@ -6,7 +6,7 @@ if the length of the movie is more than 150.
 import sqlalchemy
 from pprint import pprint
 
-engine = sqlalchemy.create_engine('mysql+pymysql://root:Bioplus1%%@localhost/sakila')
+engine = sqlalchemy.create_engine('mysql+pymysql://root:password@localhost/sakila')
 
 connection = engine.connect()
 metadata = sqlalchemy.MetaData()

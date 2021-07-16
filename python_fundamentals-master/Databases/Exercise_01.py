@@ -5,7 +5,7 @@ Using the provided database schema, write the necessary code to print informatio
 import sqlalchemy
 from pprint import pprint
 
-engine = sqlalchemy.create_engine('mysql+pymysql://root:Bioplus1%%@localhost/sakila')
+engine = sqlalchemy.create_engine('mysql+pymysql://root:password@localhost/sakila')
 
 connection = engine.connect()
 metadata = sqlalchemy.MetaData()

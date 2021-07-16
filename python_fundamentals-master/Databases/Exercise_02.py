@@ -10,7 +10,7 @@ Consider each of the tasks below as a separate database query. Using SQLAlchemy,
 import sqlalchemy
 from pprint import pprint
 
-engine = sqlalchemy.create_engine('mysql+pymysql://root:Bioplus1%%@localhost/sakila')
+engine = sqlalchemy.create_engine('mysql+pymysql://root:password@localhost/sakila')
 
 connection = engine.connect()
 metadata = sqlalchemy.MetaData()
